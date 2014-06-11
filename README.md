@@ -1,6 +1,6 @@
-Simple repo to demonstrate path problems with `render()` in `rmarkdown_0.2.46`, when using the `output_dir` and `intermediates_dir` arguments to put derived files somewhere *other* than where the input lives.
+Simple repo to demonstrate path problems with `render()` in `rmarkdown_0.2.46`. Specifically I use the `output_dir` and `intermediates_dir` arguments to put derived files somewhere *other* than where the input lives.
 
-See [Makefile.md](Makefile.md) for a demonstration of how things break down.
+See [this demonstration](src/demonstration.utf8.md) for a demonstration of how things break down (here's the [Rmd source](src/demonstration.r)).
 
 What I think is wrong:
 
@@ -11,5 +11,5 @@ What I think is wrong:
     - desired directory for results Markdown and HTML files: `PROJDIR/html-high/html-low`
     - value of `utf8_input` in `render()` and `input` in `pandoc_convert()`: `../html-high/html-low/foo.utf8.md`
     - value of `pandoc_to` in `render()` and `output` in `pandoc_convert()`: `../html-high/html-low/foo.utf8.html`
-  * The pandoc arguments are then built up including these paths that are relative to the wrong working directory and fatal errors ensue re: various files not being found / existing. Inside `pandoc_convert()`, the `input` and `output` arguments need to be processed so that they are correct relative to the current working directory, which I suspect will always be the `intermediates` directory, since it's based on `input`.
+  * The pandoc arguments are then built up including these paths that are relative to the wrong working directory and fatal errors ensue re: various files not being found / existing. Inside `pandoc_convert()`, the `input` and `output` arguments need to be processed so that they are correct relative to the current working directory, which I suspect will always be the `intermediates` directory, since it's based on `input`. For `input` this is easy -- just use `basename()`. But it might not be so easy for `output`, since the `intermediates_dir` doesn't necessarily equal the `output_dir`.
 
