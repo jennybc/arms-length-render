@@ -125,6 +125,7 @@ source('clean.r')
 ```
 
 ### Equate `output_dir` and `intermediates_dir` to distinct, lower-in hierarchy directory
+__Does not work.__
 
 
 ```r
@@ -149,5 +150,5 @@ source('clean.r')
 ---
 title: "demonstration.r"
 author: "jenny"
-date: "Wed Jun 11 16:01:22 2014"
+date: "Wed Jun 11 16:25:29 2014"
 ---

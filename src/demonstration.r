@@ -53,6 +53,7 @@ render('foo.rmd', quiet = TRUE,
 source('clean.r')
 
 #' ### Equate `output_dir` and `intermediates_dir` to distinct, lower-in hierarchy directory
+#' __Does not work.__
 #+ warning = FALSE
 dir.create('../html-high/')
 common_dir <- '../html-high/html-low'
