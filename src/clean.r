@@ -23,6 +23,7 @@ remove_files
 message("removing files:\n", paste(remove_files, collapse = "\n"))
 file.remove(remove_files)
 
+## list and remove the now-empty directories
 jdirs <- list.dirs()
 jdirs <- jdirs[!str_detect(jdirs, "^\\./\\.")]
 jdirs <- jdirs[!jdirs == "."]
