@@ -1,6 +1,6 @@
 Simple repo to demonstrate path problems with `render()` in `rmarkdown_0.2.46`. Specifically I use the `output_dir` and `intermediates_dir` arguments to put derived files somewhere *other* than where the input lives.
 
-See [this demonstration](src/demonstration.utf8.md) for a demonstration of how things break down (here's the [Rmd source](src/demonstration.r)).
+See [this demonstration](src/demonstration.utf8.md) of how things break down (here's the [Rmd source](src/demonstration.r)).
 
 What I think is wrong:
 
