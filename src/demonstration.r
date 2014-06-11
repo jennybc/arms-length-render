@@ -17,22 +17,26 @@ source('clean.r')
 sessionInfo()
 
 #' ### Plain vanilla, *in situ* render
+#' Of course this works.
 #+ warning = FALSE
 render('foo.rmd', quiet = TRUE)
 source('clean.r')
 
 #' ### `output_dir` != working directory
+#' This works.
 #+ warning = FALSE
 render('foo.rmd', quiet = TRUE, output_dir = '../html-high')
 source('clean.r')
 
 #' ### `output_dir` != working directory AND is at different level of file hierarchy
+#' This works.
 #+ warning = FALSE
 dir.create('../html-high/')
 render('foo.rmd', quiet = TRUE, output_dir = '../html-high/html-low')
 source('clean.r')
 
 #' ### `intermediates_dir` != working directory
+#' __Does not work.__
 #+ warning = FALSE
 ## not run because causes fatal pandoc error
 # pandoc: Could not find data file ./foo_files/figure-html/cars-plot.png
@@ -41,6 +45,7 @@ source('clean.r')
 source('clean.r')
 
 #' ### Equate `output_dir` and `intermediates_dir` to distinct directory, at same level in hierarchy
+#' This works for the wrong reason. Since the common directory for output and intermediates is at the same level in hierarchy as the source directory, the incorrect relative paths in `pandoc_conver()` just happen to work out.
 #+ warning = FALSE
 common_dir <- '../html-high'
 render('foo.rmd', quiet = TRUE,
