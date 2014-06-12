@@ -55,7 +55,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="header">
 <h1 class="title">demonstration.r</h1>
 <h4 class="author"><em>jenny</em></h4>
-<h4 class="date"><em>Wed Jun 11 16:25:29 2014</em></h4>
+<h4 class="date"><em>Thu Jun 12 08:33:07 2014</em></h4>
 </div>
 
 
@@ -132,7 +132,7 @@ source('clean.r')</code></pre>
 </div>
 <div id="equate-output_dir-and-intermediates_dir-to-distinct-directory-at-same-level-in-hierarchy" class="section level3">
 <h3>Equate <code>output_dir</code> and <code>intermediates_dir</code> to distinct directory, at same level in hierarchy</h3>
-<p>This works for the wrong reason. Since the common directory for output and intermediates is at the same level in hierarchy as the source directory, the incorrect relative paths in <code>pandoc_conver()</code> just happen to work out.</p>
+<p>This works for the wrong reason. Since the common directory for output and intermediates is at the same level in hierarchy as the source directory, the incorrect relative paths in <code>pandoc_convert()</code> just happen to work out.</p>
 <pre class="r"><code>common_dir &lt;- '../html-high'
 render('foo.rmd', quiet = TRUE,
        output_dir = common_dir, intermediates_dir = common_dir)

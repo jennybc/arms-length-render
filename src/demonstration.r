@@ -45,7 +45,7 @@ source('clean.r')
 source('clean.r')
 
 #' ### Equate `output_dir` and `intermediates_dir` to distinct directory, at same level in hierarchy
-#' This works for the wrong reason. Since the common directory for output and intermediates is at the same level in hierarchy as the source directory, the incorrect relative paths in `pandoc_conver()` just happen to work out.
+#' This works for the wrong reason. Since the common directory for output and intermediates is at the same level in hierarchy as the source directory, the incorrect relative paths in `pandoc_convert()` just happen to work out.
 #+ warning = FALSE
 common_dir <- '../html-high'
 render('foo.rmd', quiet = TRUE,
