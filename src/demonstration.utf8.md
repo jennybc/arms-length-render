@@ -8,9 +8,9 @@ library(rmarkdown)
 ### Directory structure of a toy project
 PROJDIR: top-level directory = RStudio project = git repo
 
-  * `src`: holds R and Rmd source
-  * `html-xxx`: holds resulting Markdown and HTML files, possibly in subdirectories
-  * in real life, there would be sister directories for data, results, etc.  
+  * `PROJDIR/src`: holds R and Rmd source
+  * `PROJDIR/html-xxx`: holds resulting Markdown and HTML files, possibly in subdirectories
+  * in real life, there would be other sister directories for data, results, etc.  
   
 We will render `PROJDIR/src/foo.rmd`, which holds the default RStudio new R Markdown file. 
 
